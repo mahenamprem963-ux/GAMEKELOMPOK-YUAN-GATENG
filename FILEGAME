@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d1c">
+  <title>Math Arena 3D — Cerdas Cermat</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080d1c;
+      --panel: rgba(17, 27, 52, .82);
+      --line: rgba(151, 181, 255, .2);
+      --cyan: #51e5ff;
+      --purple: #9b7bff;
+      --green: #6df2ad;
+      --red: #ff718c;
+      --text: #f3f6ff;
+      --muted: #aab6d4;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+      background: radial-gradient(ellipse at 50% -10%, #253b72 0%, #101a35 38%, var(--bg) 75%);
+      overflow-x: hidden;
+    }
+    #scene { position: fixed; inset: 0; z-index: -1; }
+    .app { width: min(1120px, 94vw); margin: 0 auto; padding: 24px 0 42px; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:22px; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .logo {
+      width:48px;height:48px;border-radius:15px;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--cyan),var(--purple)); color:#071021;
+      font-size:24px;font-weight:900;box-shadow:0 0 28px #51e5ff55;
+    }
+    h1 { font-size:clamp(20px,4vw,30px); margin:0; letter-spacing:-.7px; }
+    .subtitle { color:var(--muted);font-size:12px;margin-top:3px;letter-spacing:1.4px;text-transform:uppercase; }
+    .pill { border:1px solid var(--line);background:#101a32b8;padding:10px 14px;border-radius:999px;color:var(--muted);font-size:13px; }
+    .stats { display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px; }
+    .stat,.panel { background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(16px);box-shadow:0 18px 50px #0003; }
+    .stat { padding:14px 16px;border-radius:17px; }
+    .stat-label { color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1px; }
+    .stat-value { font-size:clamp(19px,3vw,26px);font-weight:800;margin-top:4px; }
+    .layout { display:grid;grid-template-columns:minmax(0,1.55fr) minmax(250px,.8fr);gap:16px;align-items:start; }
+    .panel { border-radius:22px;padding:clamp(17px,3vw,26px); }
+    .panel-top { display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px; }
+    .eyebrow { color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase; }
+    .round { color:var(--muted);font-size:13px; }
+    .progress {height:7px;border-radius:20px;background:#263351;overflow:hidden;margin:12px 0 24px;}
+    #progressFill {height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--purple));transition:width .3s ease;}
+    #question { font-size:clamp(25px,4v
